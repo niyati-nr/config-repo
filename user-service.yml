@@ -12,8 +12,17 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
+  profiles:
+    active: dev
 eureka:
   client:
     healthcheck:
       enabled: true
     should-unregister-on-shutdown: true
+  instance:
+    hostname: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
